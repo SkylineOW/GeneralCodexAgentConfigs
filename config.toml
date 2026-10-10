@@ -1,0 +1,68 @@
+model = "gpt-6-luna"
+model_reasoning_effort = "xhigh"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+
+model_context_window = 272000
+
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "context-remaining", "total-output-tokens"]
+status_line_use_colors = true
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+gpt-6-astra = 4
+"gpt-6.1-sol" = 4
+
+[agents]
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "xhigh"
+
+[features.multi_agent_v2]
+
+enabled = true
+max_concurrent_threads_per_session = 15
+expose_spawn_agent_model_overrides = true
+wait_agent_enabled = true
+
+min_wait_timeout_ms = 600000
+default_wait_timeout_ms = 600000
+max_wait_timeout_ms = 1800000
+
+usage_hint_text = """
+Delegation does not require parallelism. A bounded task may be delegated even when there is no useful local work for the manager to perform concurrently. It is acceptable to spawn an agent and then patiently wait for that agent to finish.
+
+Do not manufacture parallel work merely to justify delegation. Parallelize naturally independent work when useful; otherwise serial delegation is perfectly acceptable. This project is not being rushed, so take your time. 
+
+The configured default sub-agent model is Luna. Omit the model override for normal Luna work; explicitly select Sol or Astra only when intentionally escalating.
+"""
+
+subagent_usage_hint_text = """
+Do not delegate to sub-agents unless explicitly instructed. If you think sub-agents would be useful, consult about it with the primary manager first.
+"""
+subagent_developer_instructions = """
+You are a delegated worker or consultant. 
+Own the task or primary question/insight and be direct. If you have a valuable insight or flag regarding an unrelated or adjacent part of the project that you observed while acting in your role, you are encouraged to openly share it with the manager. However, don't take on unrelated work proactively or try to orchestrate / assume responsibility for the overall project.  
+"""
+
+[notice]
+hide_rate_limit_model_nudge = true
+
+[projects."/home/tom/Projects/RiftboundEngine"]
+trust_level = "trusted"
+
+[projects."/home/tom"]
+trust_level = "trusted"
+
+[projects."/home/tom/Projects"]
+trust_level = "trusted"
+
+[projects."/home/tom/Projects/riftbound-text-viewer"]
+trust_level = "trusted"
+
+[projects."/home/tom/Projects/Riftbound Viewer"]
+trust_level = "trusted"
+
+[projects."/home/tom/Projects/agent-dashboard"]
+trust_level = "trusted"
