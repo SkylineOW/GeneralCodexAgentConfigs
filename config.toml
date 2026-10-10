@@ -48,21 +48,3 @@ Own the task or primary question/insight and be direct. If you have a valuable i
 
 [notice]
 hide_rate_limit_model_nudge = true
-
-[projects."/home/tom/Projects/RiftboundEngine"]
-trust_level = "trusted"
-
-[projects."/home/tom"]
-trust_level = "trusted"
-
-[projects."/home/tom/Projects"]
-trust_level = "trusted"
-
-[projects."/home/tom/Projects/riftbound-text-viewer"]
-trust_level = "trusted"
-
-[projects."/home/tom/Projects/Riftbound Viewer"]
-trust_level = "trusted"
-
-[projects."/home/tom/Projects/agent-dashboard"]
-trust_level = "trusted"
